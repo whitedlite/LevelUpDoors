@@ -1,182 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Level Up Doors</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    h2 {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .collection-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .collection-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .collection-card:hover {
-      transform: scale(1.02);
-    }
-
-    .collection-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .collection-card h3 {
-      font-size: 1.1rem;
-      margin: 0.5rem 0;
-    }
-
-    .collection-card p {
-      font-size: 0.9rem;
-      padding: 0 1rem;
-      color: #666;
-    }
-
-    .collection-card button {
-      margin: 1rem 0;
-      padding: 0.5rem 1rem;
-      border: none;
-      background-color: #e63946;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .collection-card button:hover {
-      background-color: #d62828;
-    }
-  </style>
-</head>
-<body>
-
-  <section id="collections">
-    <h2>Choose Your Collection</h2>
-    <div class="collection-grid">
-
-      <div class="collection-card">
-        <img src="/images/collections/canyon-ridge-carriage-house-4-layer.webp" alt="Canyon Ridge 4-Layer">
-        <h3>Canyon Ridge® Carriage House 4 Layer Construction</h3>
-        <p>Insulated faux wood garage doors on a steel base. Installed from $5,625.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/coachman.webp" alt="Coachman">
-        <h3>Coachman®</h3>
-        <p>Insulated steel and composite carriage house garage doors. Installed from $3,310.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/canyon-ridge-elements.webp" alt="Canyon Ridge Elements">
-        <h3>Canyon Ridge® Elements</h3>
-        <p>Painted faux wood garage doors. Installed from $5,059.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/vertistack-avante.webp" alt="VertiStack Avante">
-        <h3>VertiStack® Avante®</h3>
-        <p>Trackless stacking glass garage doors. Installed from $18,719.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/gallery-steel.webp" alt="Gallery Steel">
-        <h3>Gallery® Steel</h3>
-        <p>Grooved panel steel doors. Installed from $1,325.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/classic-steel.webp" alt="Classic Steel">
-        <h3>Classic™ Steel</h3>
-        <p>Short or long panel doors. Installed from $933.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/reserve-wood-modern.webp" alt="Reserve Wood Modern">
-        <h3>Reserve® Wood Modern</h3>
-        <p>Contemporary natural wood doors. Installed from $9,537.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/bridgeport.webp" alt="Bridgeport Steel">
-        <h3>Bridgeport™ Steel</h3>
-        <p>Shaker style steel garage doors. Installed from $1,325.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/modern-steel.webp" alt="Modern Steel">
-        <h3>Modern™ Steel</h3>
-        <p>Sleek panel steel doors. Installed from $1,178.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/modern-steel-plank.webp" alt="Modern Steel Ultra-Grain Plank">
-        <h3>Modern™ Steel Ultra-Grain® Plank</h3>
-        <p>Wood-look steel doors. Installed from $1,178.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/lustra-paint.webp" alt="Lustra Paint Finish">
-        <h3>Lustra™ Paint Finish</h3>
-        <p>Low-gloss matte finish steel. Installed from $1,325.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/canyon-ridge-carriage-house-5-layer.webp" alt="Canyon Ridge 5 Layer">
-        <h3>Canyon Ridge® Carriage House 5 Layer Construction</h3>
-        <p>Composite faux wood overlays. Installed from $9,629.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/canyon-ridge-chevron.webp" alt="Canyon Ridge Chevron">
-        <h3>Canyon Ridge® Carriage House 5-Layer Chevron</h3>
-        <p>Chevron pattern faux wood doors. Installed from $10,634.</p>
-        <button>DESIGN</button>
-      </div>
-
-      <div class="collection-card">
-        <img src="/images/collections/avante.webp" alt="Avante">
-        <h3>Avante®</h3>
-        <p>Sleek aluminum frame and glass doors. Installed from $5,769.</p>
-        <button>DESIGN</button>
-      </div>
-
+<!-- Updated 'collections' section with corrected and new items -->
+<div id="collections" class="collection hidden">
+  <h2>Choose Your Collection</h2>
+  <div class="collection-grid">
+    <div class="collection-card">
+      <img src="/images/collections/canyon-ridge-carriage-house-4-layer.webp" alt="Canyon Ridge 4-Layer">
+      <h3>Canyon Ridge® Carriage House 4 Layer Construction</h3>
+      <p>Insulated faux wood garage doors on a steel base. Installed from $5,625.</p>
+      <button>DESIGN</button>
     </div>
-  </section>
-
-</body>
-</html>
+    <div class="collection-card">
+      <img src="/images/collections/coachman.webp" alt="Coachman">
+      <h3>Coachman®</h3>
+      <p>Insulated steel and composite carriage house garage doors. Installed from $3,310.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/canyon-ridge-elements.webp" alt="Canyon Ridge Elements">
+      <h3>Canyon Ridge® Elements</h3>
+      <p>Painted faux wood garage doors. Installed from $5,059.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/vertistack-avante.webp" alt="VertiStack Avante">
+      <h3>VertiStack® Avante®</h3>
+      <p>Trackless stacking glass garage doors. Installed from $18,719.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/gallery-steel.webp" alt="Gallery Steel">
+      <h3>Gallery® Steel</h3>
+      <p>Grooved panel steel doors. Installed from $1,325.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/classic-steel.webp" alt="Classic Steel">
+      <h3>Classic™ Steel</h3>
+      <p>Short or long panel doors. Installed from $933.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/reserve-wood-modern.webp" alt="Reserve Wood Modern">
+      <h3>Reserve® Wood Modern</h3>
+      <p>Contemporary natural wood doors. Installed from $9,537.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/bridgeport.webp" alt="Bridgeport Steel">
+      <h3>Bridgeport™ Steel</h3>
+      <p>Shaker style steel garage doors. Installed from $1,325.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/modern-steel.webp" alt="Modern Steel">
+      <h3>Modern™ Steel</h3>
+      <p>Sleek panel steel doors. Installed from $1,178.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/modern-steel-plank.webp" alt="Modern Steel Ultra-Grain Plank">
+      <h3>Modern™ Steel Ultra-Grain® Plank</h3>
+      <p>Wood-look steel doors. Installed from $1,178.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/canyon-ridge-carriage-house-5-layer.webp" alt="Canyon Ridge 5 Layer">
+      <h3>Canyon Ridge® Carriage House 5 Layer Construction</h3>
+      <p>Composite faux wood overlays. Installed from $9,629.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/canyon-ridge-chevron.webp" alt="Canyon Ridge Chevron">
+      <h3>Canyon Ridge® Carriage House 5-Layer Chevron</h3>
+      <p>Chevron pattern faux wood doors. Installed from $10,634.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/avante.webp" alt="Avante">
+      <h3>Avante®</h3>
+      <p>Sleek aluminum frame and glass doors. Installed from $5,769.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/avante-sleek.webp" alt="Avante Sleek">
+      <h3>Avante® Sleek</h3>
+      <p>Frameless contemporary glass design. Installed from $7,900.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/canyon-ridge-modern.webp" alt="Canyon Ridge Modern">
+      <h3>Canyon Ridge® Modern</h3>
+      <p>Modern faux wood styles with flush panels. Installed from $6,750.</p>
+      <button>DESIGN</button>
+    </div>
+    <div class="collection-card">
+      <img src="/images/collections/canyon-ridge-louver.webp" alt="Canyon Ridge Louver">
+      <h3>Canyon Ridge® Louver</h3>
+      <p>Tropical-inspired louver panel garage doors. Installed from $7,200.</p>
+      <button>DESIGN</button>
+    </div>
+  </div>
+</div>
