@@ -75,7 +75,8 @@
       <input type="email" id="email" name="email" required>
 
       <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" required>
+      <input type="tel" id="phone" name="phone" required pattern="\d{10,}" title="Please enter at least 10 digits">
+      <span id="phoneError" style="color: red; font-size: 0.9rem;"></span>
 
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
@@ -87,5 +88,20 @@
       Or call us directly: <a href="tel:+12052173034">(205) 217-3034</a>
     </div>
   </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneInput = document.getElementById("phone");
+  phoneInput.addEventListener("input", function () {
+    const message = document.getElementById("phoneError");
+    if (!/\d{10,}/.test(phoneInput.value)) {
+      message.textContent = "Phone number must be at least 10 digits.";
+    } else {
+      message.textContent = "";
+    }
+  });
+});
+</script>
+
 </body>
 </html>
