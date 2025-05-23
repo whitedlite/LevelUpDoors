@@ -1,126 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us | Level Up Doors</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-    }
-    .container {
-      max-width: 600px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    form label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-top: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    form button {
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #e63946;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    form button:hover {
-      background-color: #d62839;
-    }
-    .contact-phone {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
-    }
-    .error-message {
-      color: red;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Contact Level Up Doors</h1>
-  </header>
+<!-- Updated layout with contact info and call button -->
+<div style="background: #222; color: white; text-align: center; padding: 1rem 0; font-size: 1.1rem;">
+  <a href="tel:+12052173034" style="color: white; text-decoration: none; margin-right: 1.5rem;">📞 (205) 217-3034</a>
+  <a href="/contact.html" style="color: white; background-color: #e63946; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">Contact Us</a>
+</div>
 
-  <div class="container">
-    <h2>Get in Touch</h2>
-    <form action="https://formspree.io/f/mnndykpa" method="POST">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-      <span id="nameError" class="error-message"></span>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneInput = document.getElementById("phone");
+  if (phoneInput) {
+    phoneInput.addEventListener("input", function () {
+      const message = document.getElementById("phoneError");
+      const digits = phoneInput.value.replace(/\D/g, '');
+      if (!/^\d{10}$/.test(digits)) {
+        message.textContent = "Phone number must be exactly 10 digits (hyphens optional).";
+      } else {
+        message.textContent = "";
+      }
+    });
+  }
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+  const nameInput = document.getElementById("name");
+  if (nameInput) {
+    nameInput.addEventListener("input", function () {
+      const message = document.getElementById("nameError");
+      const namePattern = /^[^\s]+\s+.{2,}$/;
+      if (!namePattern.test(nameInput.value.trim())) {
+        message.textContent = "Please enter first and last name (last name must be at least 2 characters).";
+      } else {
+        message.textContent = "";
+      }
+    });
+  }
+});
+</script>
 
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" required pattern="\d{10,}" title="Please enter at least 10 digits">
-      <span id="phoneError" class="error-message"></span>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Submit</button>
-    </form>
-
-    <div class="contact-phone">
-      Or call us directly: <a href="tel:+12052173034">(205) 217-3034</a>
-    </div>
-  </div>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const phoneInput = document.getElementById("phone");
-    if (phoneInput) {
-      phoneInput.addEventListener("input", function () {
-        const message = document.getElementById("phoneError");
-        if (!/\d{10,}/.test(phoneInput.value)) {
-          message.textContent = "Phone number must be at least 10 digits.";
-        } else {
-          message.textContent = "";
-        }
-      });
-    }
-
-    const nameInput = document.getElementById("name");
-    if (nameInput) {
-      nameInput.addEventListener("input", function () {
-        const message = document.getElementById("nameError");
-        const namePattern = /^[^\s]+\s+.{2,}$/; // requires a space and at least 2 characters after it
-        if (!namePattern.test(nameInput.value.trim())) {
-          message.textContent = "Please enter first and last name.";
-        } else {
-          message.textContent = "";
-        }
-      });
-    }
-  });
-  </script>
-</body>
-</html>
+<!-- Existing content remains below -->
+<div id="collections" class="collection hidden">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Choose Your Collection</h2>
+  <div class="collection-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 0 2rem;">
