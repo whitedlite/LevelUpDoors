@@ -58,6 +58,10 @@
       margin-top: 1.5rem;
       font-size: 1.1rem;
     }
+    .error-message {
+      color: red;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -70,14 +74,14 @@
     <form action="https://formspree.io/f/mnndykpa" method="POST">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required>
-      <span id="nameError" style="color: red; font-size: 0.9rem;"></span>
+      <span id="nameError" class="error-message"></span>
 
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
 
       <label for="phone">Phone</label>
       <input type="tel" id="phone" name="phone" required pattern="\d{10,}" title="Please enter at least 10 digits">
-      <span id="phoneError" style="color: red; font-size: 0.9rem;"></span>
+      <span id="phoneError" class="error-message"></span>
 
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
@@ -90,44 +94,33 @@
     </div>
   </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const phoneInput = document.getElementById("phone");
-  phoneInput.addEventListener("input", function () {
-    const message = document.getElementById("phoneError");
-    if (!/\d{10,}/.test(phoneInput.value)) {
-      message.textContent = "Phone number must be at least 10 digits.";
-    } else {
-      message.textContent = "";
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const phoneInput = document.getElementById("phone");
+    if (phoneInput) {
+      phoneInput.addEventListener("input", function () {
+        const message = document.getElementById("phoneError");
+        if (!/\d{10,}/.test(phoneInput.value)) {
+          message.textContent = "Phone number must be at least 10 digits.";
+        } else {
+          message.textContent = "";
+        }
+      });
+    }
+
+    const nameInput = document.getElementById("name");
+    if (nameInput) {
+      nameInput.addEventListener("input", function () {
+        const message = document.getElementById("nameError");
+        const namePattern = /^[^\s]+\s+.{2,}$/; // requires a space and at least 2 characters after it
+        if (!namePattern.test(nameInput.value.trim())) {
+          message.textContent = "Please enter first and last name.";
+        } else {
+          message.textContent = "";
+        }
+      });
     }
   });
-});
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const phoneInput = document.getElementById("phone");
-  phoneInput.addEventListener("input", function () {
-    const message = document.getElementById("phoneError");
-    if (!/\d{10,}/.test(phoneInput.value)) {
-      message.textContent = "Phone number must be at least 10 digits.";
-    } else {
-      message.textContent = "";
-    }
-  });
-
-  const nameInput = document.getElementById("name");
-  nameInput.addEventListener("input", function () {
-    const message = document.getElementById("nameError");
-    if (!nameInput.value.includes(" ")) {
-      message.textContent = "Please enter first and last name.";
-    } else {
-      message.textContent = "";
-    }
-  });
-});
-</script>
-
+  </script>
 </body>
 </html>
