@@ -26,7 +26,7 @@
       padding: 0;
     }
     main {
-      max-width: 1000px;
+      max-width: 700px;
       margin: 2rem auto;
       padding: 1rem;
       background: white;
@@ -84,7 +84,7 @@
 
 <style>
 .carousel {
-  max-width: 1000px;
+  max-width: 700px;
   margin: 2rem auto;
   position: relative;
   overflow: hidden;
@@ -112,7 +112,7 @@
   border-radius: 5px;
 }
 .testimonials {
-  max-width: 1000px;
+  max-width: 700px;
   margin: 3rem auto;
   padding: 2rem;
   background: #fff;
@@ -145,32 +145,38 @@
   </div>
 </div>
 
+
 <div class="testimonials">
   <h2>What Our Customers Say</h2>
-  <div class="testimonial">
-    “Level Up Doors did an amazing job replacing our old garage door. It looks incredible and operates so quietly now!”
-    <strong>— Sarah J., Birmingham, AL</strong>
-  </div>
-  <div class="testimonial">
-    “Fast, friendly, and professional. We’re very happy with the service and love our new door!”
-    <strong>— Mike R., Hoover, AL</strong>
-  </div>
-  <div class="testimonial">
-    “Great communication, quality work, and fair pricing. Highly recommend Level Up Doors.”
-    <strong>— Jessica T., Vestavia Hills, AL</strong>
-  </div>
+  <div id="testimonial" class="testimonial"></div>
 </div>
 
 <script>
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel img');
-function showSlide(n) {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + n + slides.length) % slides.length;
-  slides[currentSlide].classList.add('active');
-}
-setInterval(() => showSlide(1), 5000);
+const testimonials = [
+  {
+    text: "Level Up Doors did an amazing job replacing our old garage door. It looks incredible and operates so quietly now!",
+    author: "— Sarah J., Birmingham, AL"
+  },
+  {
+    text: "Fast, friendly, and professional. We’re very happy with the service and love our new door!",
+    author: "— Mike R., Hoover, AL"
+  },
+  {
+    text: "Great communication, quality work, and fair pricing. Highly recommend Level Up Doors.",
+    author: "— Jessica T., Vestavia Hills, AL"
+  },
+  {
+    text: "They arrived on time, worked quickly, and cleaned up everything perfectly. Couldn't ask for more!",
+    author: "— Anthony C., Homewood, AL"
+  }
+];
+const randomTestimonial = testimonials[Math.floor(Math.random() * testimonials.length)];
+document.addEventListener("DOMContentLoaded", () => {
+  const testimonialDiv = document.getElementById("testimonial");
+  testimonialDiv.innerHTML = `"${randomTestimonial.text}"<strong>${randomTestimonial.author}</strong>`;
+});
 </script>
+
 
 </body>
 </html>
