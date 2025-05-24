@@ -5,18 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Level Up Doors</title>
   <style>
-    header {
-  background: #222;
-  padding: 1rem 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-body {
-  padding-top: 100px; /* adjust based on header height */
-}
     body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
     header { background: #222; padding: 1rem 0; }
     header div { max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 0 1rem; }
@@ -253,4 +241,40 @@ body {
       <button>DESIGN</button>
       <button onclick="window.open('https://literature.clopay.com/pdf_files/RSDR-WOODIDEA-10.pdf', '_blank')">BROCHURE</button>
     </div>
-    </div></body></html>
+    </div>
+
+
+<style>
+.floating-buttons {
+  position: fixed;
+  right: 10px;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1001;
+}
+.floating-buttons a {
+  background-color: #e63946;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.floating-buttons a:hover {
+  background-color: #d62839;
+}
+</style>
+<div class="floating-buttons">
+  <a href="/contact.html">Schedule Appointment</a>
+  <a href="/contact.html">Contact</a>
+  <a href="tel:+12052173034">📞 (205) 217-3034</a>
+</div>
+
+
+
+</body></html>
