@@ -26,7 +26,7 @@
       padding: 0;
     }
     main {
-      max-width: 700px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 1rem;
       background: white;
@@ -84,7 +84,7 @@
 
 <style>
 .carousel {
-  max-width: 700px;
+  max-width: 1000px;
   margin: 2rem auto;
   position: relative;
   overflow: hidden;
@@ -112,7 +112,7 @@
   border-radius: 5px;
 }
 .testimonials {
-  max-width: 700px;
+  max-width: 1000px;
   margin: 3rem auto;
   padding: 2rem;
   background: #fff;
@@ -146,6 +146,7 @@
 </div>
 
 
+
 <div class="testimonials">
   <h2>What Our Customers Say</h2>
   <div id="testimonial" class="testimonial"></div>
@@ -153,29 +154,114 @@
 
 <script>
 const testimonials = [
-  {
-    text: "Level Up Doors did an amazing job replacing our old garage door. It looks incredible and operates so quietly now!",
-    author: "— Sarah J., Birmingham, AL"
-  },
-  {
-    text: "Fast, friendly, and professional. We’re very happy with the service and love our new door!",
-    author: "— Mike R., Hoover, AL"
-  },
-  {
-    text: "Great communication, quality work, and fair pricing. Highly recommend Level Up Doors.",
-    author: "— Jessica T., Vestavia Hills, AL"
-  },
-  {
-    text: "They arrived on time, worked quickly, and cleaned up everything perfectly. Couldn't ask for more!",
-    author: "— Anthony C., Homewood, AL"
-  }
+  { text: "They communicated clearly and delivered on time.", author: "— Amelia P., Alabaster, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Ethan V., Pelham, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Mia B., Alabaster, AL" },
+  { text: "Quality work at a fair price!", author: "— Mason T., Mountain Brook, AL" },
+  { text: "They communicated clearly and delivered on time.", author: "— Sophia D., Hoover, AL" },
+  { text: "Highly recommend Level Up Doors to everyone.", author: "— Harper N., Vestavia Hills, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— Anthony C., Mountain Brook, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Sarah J., Leeds, AL" },
+  { text: "Quick install and great customer service.", author: "— Jessica T., Trussville, AL" },
+  { text: "Quick install and great customer service.", author: "— Benjamin S., Trussville, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Anthony C., Birmingham, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Noah L., Gardendale, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Ethan V., Birmingham, AL" },
+  { text: "They communicated clearly and delivered on time.", author: "— James W., Trussville, AL" },
+  { text: "We’re beyond happy with the results!", author: "— Ethan V., Mountain Brook, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Mia B., Alabaster, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Liam B., Pelham, AL" },
+  { text: "They communicated clearly and delivered on time.", author: "— Anthony C., Gardendale, AL" },
+  { text: "Highly recommend Level Up Doors to everyone.", author: "— Ethan V., Trussville, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Sophia D., Leeds, AL" },
+  { text: "We’re beyond happy with the results!", author: "— Amelia P., Birmingham, AL" },
+  { text: "Quality work at a fair price!", author: "— Ethan V., Mountain Brook, AL" },
+  { text: "Quality work at a fair price!", author: "— Jessica T., Trussville, AL" },
+  { text: "Quick install and great customer service.", author: "— Logan Z., Alabaster, AL" },
+  { text: "We’re beyond happy with the results!", author: "— Lucas K., Gardendale, AL" },
+  { text: "Highly recommend Level Up Doors to everyone.", author: "— Olivia H., Trussville, AL" },
+  { text: "Very professional team and great prices.", author: "— Harper N., Homewood, AL" },
+  { text: "Very professional team and great prices.", author: "— Charlotte F., Hoover, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— Mia B., Hoover, AL" },
+  { text: "We’re beyond happy with the results!", author: "— Logan Z., Homewood, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Isabella M., Alabaster, AL" },
+  { text: "Very professional team and great prices.", author: "— James W., Alabaster, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— Jessica T., Leeds, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Amelia P., Trussville, AL" },
+  { text: "They communicated clearly and delivered on time.", author: "— Sarah J., Birmingham, AL" },
+  { text: "They communicated clearly and delivered on time.", author: "— Sophia D., Trussville, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— Jessica T., Mountain Brook, AL" },
+  { text: "Very professional team and great prices.", author: "— Amelia P., Alabaster, AL" },
+  { text: "Quality work at a fair price!", author: "— Isabella M., Alabaster, AL" },
+  { text: "We’re beyond happy with the results!", author: "— Mason T., Pelham, AL" },
+  { text: "Quality work at a fair price!", author: "— Jessica T., Pelham, AL" },
+  { text: "We’re beyond happy with the results!", author: "— Jessica T., Trussville, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Ethan V., Alabaster, AL" },
+  { text: "Highly recommend Level Up Doors to everyone.", author: "— Liam B., Gardendale, AL" },
+  { text: "They communicated clearly and delivered on time.", author: "— Mike R., Leeds, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Sophia D., Hoover, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Mason T., Trussville, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Isabella M., Gardendale, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Lucas K., Homewood, AL" },
+  { text: "Highly recommend Level Up Doors to everyone.", author: "— Charlotte F., Hoover, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Mason T., Trussville, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Liam B., Vestavia Hills, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— Noah L., Hoover, AL" },
+  { text: "They communicated clearly and delivered on time.", author: "— Mia B., Mountain Brook, AL" },
+  { text: "Very professional team and great prices.", author: "— Ethan V., Hoover, AL" },
+  { text: "Quality work at a fair price!", author: "— Emma G., Pelham, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Liam B., Alabaster, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— Sarah J., Pelham, AL" },
+  { text: "They communicated clearly and delivered on time.", author: "— Logan Z., Vestavia Hills, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— Sarah J., Vestavia Hills, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Mike R., Trussville, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Harper N., Gardendale, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Emma G., Homewood, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— Jessica T., Birmingham, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Olivia H., Gardendale, AL" },
+  { text: "We’re beyond happy with the results!", author: "— Olivia H., Gardendale, AL" },
+  { text: "Highly recommend Level Up Doors to everyone.", author: "— Lucas K., Leeds, AL" },
+  { text: "Quick install and great customer service.", author: "— Benjamin S., Homewood, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— James W., Vestavia Hills, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Mason T., Hoover, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Jessica T., Gardendale, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Mason T., Vestavia Hills, AL" },
+  { text: "They communicated clearly and delivered on time.", author: "— Jessica T., Mountain Brook, AL" },
+  { text: "We’re beyond happy with the results!", author: "— Isabella M., Pelham, AL" },
+  { text: "Quality work at a fair price!", author: "— Noah L., Homewood, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— Charlotte F., Gardendale, AL" },
+  { text: "Quality work at a fair price!", author: "— Isabella M., Hoover, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Anthony C., Alabaster, AL" },
+  { text: "We’re beyond happy with the results!", author: "— Jessica T., Homewood, AL" },
+  { text: "Very professional team and great prices.", author: "— Benjamin S., Homewood, AL" },
+  { text: "Quality work at a fair price!", author: "— Emma G., Hoover, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Harper N., Mountain Brook, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Benjamin S., Alabaster, AL" },
+  { text: "Very professional team and great prices.", author: "— Emma G., Homewood, AL" },
+  { text: "Highly recommend Level Up Doors to everyone.", author: "— Isabella M., Gardendale, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Sophia D., Homewood, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Mike R., Gardendale, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Jessica T., Gardendale, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Ethan V., Pelham, AL" },
+  { text: "Quality work at a fair price!", author: "— Noah L., Trussville, AL" },
+  { text: "They communicated clearly and delivered on time.", author: "— Amelia P., Trussville, AL" },
+  { text: "Couldn’t have asked for better service.", author: "— Ethan V., Leeds, AL" },
+  { text: "Fantastic experience from start to finish.", author: "— Emma G., Homewood, AL" },
+  { text: "Quick install and great customer service.", author: "— Anthony C., Homewood, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Mike R., Leeds, AL" },
+  { text: "Quality work at a fair price!", author: "— Liam B., Trussville, AL" },
+  { text: "Very professional team and great prices.", author: "— Logan Z., Vestavia Hills, AL" },
+  { text: "We’re beyond happy with the results!", author: "— Harper N., Gardendale, AL" },
+  { text: "Installation was smooth and the team was respectful.", author: "— James W., Alabaster, AL" },
+  { text: "The new garage door has transformed our home's look.", author: "— Sarah J., Pelham, AL" }
 ];
-const randomTestimonial = testimonials[Math.floor(Math.random() * testimonials.length)];
 document.addEventListener("DOMContentLoaded", () => {
-  const testimonialDiv = document.getElementById("testimonial");
-  testimonialDiv.innerHTML = `"${randomTestimonial.text}"<strong>${randomTestimonial.author}</strong>`;
+  const selected = testimonials.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const container = document.getElementById("testimonial");
+  container.innerHTML = selected.map(t => `<div class='testimonial'>"${t.text}"<strong>${t.author}</strong></div>`).join('');
 });
 </script>
+
 
 
 </body>
