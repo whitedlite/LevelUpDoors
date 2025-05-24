@@ -83,7 +83,7 @@
         const message = document.getElementById("nameError");
         const namePattern = /^[^\s]+\s+.{2,}$/;
         if (!namePattern.test(nameInput.value.trim())) {
-          message.textContent = "Please enter first and last name (last name must be at least 2 characters).";
+          message.textContent = "Please enter first and last name.";
         } else {
           message.textContent = "";
         }
