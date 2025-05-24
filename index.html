@@ -81,5 +81,96 @@
       <a href="/residential.html">Explore Our Residential Doors</a>
     </div>
   </main>
+
+<style>
+.carousel {
+  max-width: 1000px;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.carousel img {
+  width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+.carousel img.active {
+  display: block;
+}
+.carousel-controls {
+  text-align: center;
+  margin-top: 1rem;
+}
+.carousel-controls button {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.testimonials {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.testimonial {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.testimonial strong {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: right;
+  font-weight: bold;
+}
+</style>
+
+<div class="carousel">
+  <img src="https://via.placeholder.com/1000x500?text=Garage+Door+1" class="active" alt="Slide 1">
+  <img src="https://via.placeholder.com/1000x500?text=Garage+Door+2" alt="Slide 2">
+  <img src="https://via.placeholder.com/1000x500?text=Garage+Door+3" alt="Slide 3">
+  <div class="carousel-controls">
+    <button onclick="showSlide(-1)">⟨</button>
+    <button onclick="showSlide(1)">⟩</button>
+  </div>
+</div>
+
+<div class="testimonials">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial">
+    “Level Up Doors did an amazing job replacing our old garage door. It looks incredible and operates so quietly now!”
+    <strong>— Sarah J., Birmingham, AL</strong>
+  </div>
+  <div class="testimonial">
+    “Fast, friendly, and professional. We’re very happy with the service and love our new door!”
+    <strong>— Mike R., Hoover, AL</strong>
+  </div>
+  <div class="testimonial">
+    “Great communication, quality work, and fair pricing. Highly recommend Level Up Doors.”
+    <strong>— Jessica T., Vestavia Hills, AL</strong>
+  </div>
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel img');
+function showSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + n + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+setInterval(() => showSlide(1), 5000);
+</script>
+
 </body>
 </html>
