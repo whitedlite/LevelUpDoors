@@ -179,13 +179,14 @@ nav a {
     }, 8000);
   </script>
 
-<section id="testimonials" style="max-width: 900px; margin: 4rem auto; padding: 0 1rem;">
-  <h2 style="text-align: center;">What Our Customers Say</h2>
-  <div id="testimonial-box" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); font-style: italic; line-height: 1.6;"></div>
-</section>
+<div class="testimonials">
+  <h2>What Our Customers Say</h2>
+  <div id="testimonial" class="testimonial"></div>
+</div>
+
 <script>
-  const testimonials = [
-     { text: "They communicated clearly and arrived on time.", author: "— Amelia P., Alabaster, AL" },
+const testimonials = [
+  { text: "They communicated clearly and arrived on time.", author: "— Amelia P., Alabaster, AL" },
   { text: "Fantastic experience from start to finish.", author: "— Ethan V., Pelham, AL" },
   { text: "Couldn’t have asked for better service.", author: "— Mia B., Alabaster, AL" },
   { text: "Quality work at a fair price!", author: "— Mason T., Mountain Brook, AL" },
@@ -285,15 +286,12 @@ nav a {
   { text: "The keypad wouldn’t sync with our opener, and they fixed it and showed us how to reprogram it. If it ever happens again.", author: "— Harper N., Gardendale, AL" },
   { text: "We thought we needed a whole new door, but they saved us money with just a repair.", author: "— James W., Alabaster, AL" },
   { text: "They repaired our bent tracks and adjusted the door alignment so it finally closes right.", author: "— Sarah J., Pelham, AL" }
-  ];
-
-  function getRandomTestimonials(count) {
-    const shuffled = testimonials.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
-  }
-
-  const box = document.getElementById("testimonial-box");
-  box.innerHTML = getRandomTestimonials(3).map(t => `<p>"${t}"</p>`).join("");
+];
+document.addEventListener("DOMContentLoaded", () => {
+  const selected = testimonials.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const container = document.getElementById("testimonial");
+  container.innerHTML = selected.map(t => `<div class='testimonial'>"${t.text}"<strong>${t.author}</strong></div>`).join('');
+});
 </script>
 
 </body>
