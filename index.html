@@ -46,7 +46,6 @@
       text-decoration: none;
     }
 
-    /* Carousel styles */
     .carousel {
       position: relative;
       max-width: 100%;
@@ -79,7 +78,6 @@
     .prev { left: 10px; }
     .next { right: 10px; }
 
-    /* Overlay text */
     .main-overlay {
       position: absolute;
       bottom: 30px;
@@ -127,7 +125,7 @@
   <div class="carousel">
     <div class="slides" id="slides">
       <img src="https://via.placeholder.com/1200x500?text=Garage+Door+Install" alt="Garage 1">
-      <img src="/images/remote.jpg" alt="Garage Door Remote">
+      <img src="https://via.placeholder.com/1200x500?text=Garage+Remote" alt="Garage Door Remote">
       <img src="https://via.placeholder.com/1200x500?text=Repair+Services" alt="Garage 2">
     </div>
     <button class="nav-btn prev" onclick="moveSlide(-1)">❮</button>
@@ -157,22 +155,16 @@
 
     setInterval(() => {
       moveSlide(1);
-    }, 8000); // auto-slide every 5 seconds
+    }, 8000);
   </script>
 
   <section style="max-width: 900px; margin: 4rem auto; padding: 0 1rem;">
     <h2 style="text-align: center;">What Our Customers Say</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-      <blockquote style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        “Level Up Doors was fast, professional, and affordable. Highly recommend!”
-      </blockquote>
-      <blockquote style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        “Tanner and his crew did a fantastic job on our shop's overhead doors.”
-      </blockquote>
-      <blockquote style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        “Easy scheduling, honest pricing, and clean install. Would use them again!”
-      </blockquote>
-    </div>
+    <blockquote style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); font-style: italic; line-height: 1.6;">
+      “Level Up Doors was fast, professional, and affordable. Highly recommend!”<br><br>
+      “Tanner and his crew did a fantastic job on our shop's overhead doors.”<br><br>
+      “Easy scheduling, honest pricing, and clean install. Would use them again!”
+    </blockquote>
   </section>
 </body>
 </html>
