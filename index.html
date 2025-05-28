@@ -34,7 +34,7 @@
     text-align: center;
   }
   header img {
-    height: 140px;
+    height: 160px;
     width: auto;
   }
   nav {
@@ -187,5 +187,33 @@ nav a {
       “Easy scheduling, honest pricing, and clean install. Would use them again!”
     </blockquote>
   </section>
+
+<section id="testimonials" style="max-width: 900px; margin: 4rem auto; padding: 0 1rem;">
+  <h2 style="text-align: center;">What Our Customers Say</h2>
+  <div id="testimonial-box" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); font-style: italic; line-height: 1.6;"></div>
+</section>
+<script>
+  const testimonials = [
+    "Outstanding service from Level Up Doors!",
+    "Quick response and professional team.",
+    "Very happy with the quality of the install.",
+    "Reliable and affordable, highly recommend!",
+    "Great experience from start to finish.",
+    "Tanner was knowledgeable and helpful.",
+    "Smooth installation and courteous crew.",
+    "Came out same day and fixed everything.",
+    "Fantastic pricing and fast turnaround.",
+    "I’ll definitely use them again!"
+  ];
+
+  function getRandomTestimonials(count) {
+    const shuffled = testimonials.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  }
+
+  const box = document.getElementById("testimonial-box");
+  box.innerHTML = getRandomTestimonials(3).map(t => `<p>"${t}"</p>`).join("");
+</script>
+
 </body>
 </html>
