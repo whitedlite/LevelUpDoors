@@ -299,5 +299,35 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+
+<section id="testimonials" style="width: 100%; margin: 4rem 0; display: flex; justify-content: center;">
+  <div style="width: 100%; max-width: 700px; text-align: center;">
+    <h2>What Our Customers Say</h2>
+    <div id="testimonial-box" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); font-style: italic; line-height: 1.6; text-align: left;"></div>
+  </div>
+</section>
+<script>
+  const testimonials = [
+    { text: "Outstanding service from Level Up Doors!", author: "— Michelle W." },
+    { text: "Quick response and professional team.", author: "— James K." },
+    { text: "Very happy with the quality of the install.", author: "— Sarah T." },
+    { text: "Reliable and affordable, highly recommend!", author: "— Frank D." },
+    { text: "Great experience from start to finish.", author: "— Hannah M." },
+    { text: "Tanner was knowledgeable and helpful.", author: "— John R." },
+    { text: "Smooth installation and courteous crew.", author: "— Amanda L." },
+    { text: "Came out same day and fixed everything.", author: "— Pete B." },
+    { text: "Fantastic pricing and fast turnaround.", author: "— Eric S." },
+    { text: "I’ll definitely use them again!", author: "— Rachel P." }
+  ];
+
+  const selected = testimonials.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const container = document.getElementById("testimonial-box");
+  container.innerHTML = selected.map(t => `
+    <p>"${t.text}"</p>
+    <p><strong>${t.author}</strong></p>
+    <hr style="margin: 1.5rem 0;">
+  `).join('');
+</script>
+
 </body>
 </html>
