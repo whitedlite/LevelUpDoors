@@ -1,48 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Barnes Garage Doors</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Service &amp; Repair | Barnes Garage Doors LLC</title>
+  <link rel="preconnect" href="https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffonts.googleapis.com%2F&data=05%7C02%7Ctannerbarnes%40thompsontractor.com%7C5b6c398bcec4416d35a108de9653a414%7C02b136010568417f9ecab20f5d0225c4%7C0%7C0%7C639113483149086855%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=%2BADgs7AQ0NOp4xT1cpgA8CG72nUmOV3G%2BrORuJuO1XY%3D&reserved=0">
+  <link href="https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DPlayfair%2BDisplay%3Awght%40600%3B700%26family%3DSource%2BSans%2B3%3Awght%40300%3B400%3B600%3B700%26display%3Dswap&data=05%7C02%7Ctannerbarnes%40thompsontractor.com%7C5b6c398bcec4416d35a108de9653a414%7C02b136010568417f9ecab20f5d0225c4%7C0%7C0%7C639113483149149289%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=vBBInEHjhsI32UjLNbZ%2Bw3ddp8gNHoDQaO6EJx%2FK8Do%3D&reserved=0" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; margin-left: 240px; }
-    header { background: #222; padding: 2rem 1rem; position: fixed; top: 0; left: 0; height: 100vh; width: 220px; z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
-    header div { display: flex; flex-direction: column; align-items: center; text-align: center; }
-    header img { height: 125px; width: auto; aspect-ratio: 2 / 1; }
-    nav { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-    nav a { color: white; text-decoration: none; }
-    .container { max-width: 600px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    h2 { text-align: center; margin-bottom: 1.5rem; }
-    form label { display: block; margin-top: 1rem; font-weight: bold; }
-    form input, form textarea { width: 100%; padding: 0.75rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 5px; }
-    form button { margin-top: 1.5rem; padding: 0.75rem 1.5rem; background-color: #e63946; color: white; border: none; border-radius: 5px; cursor: pointer; }
-    form button:hover { background-color: #d62839; }
-    .contact-phone { text-align: center; margin-top: 1.5rem; font-size: 1.1rem; }
-    .error-message { color: red; font-size: 0.9rem; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--navy:#1a2744;--gold:#b8975a;--gold-light:#d4b07a;--red:#c0392b;--red-hover:#a93226;--white:#ffffff;--offwhite:#f8f6f2;--text:#2c2c2c;--text-light:#555;}
+    body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:var(--white);}
+    .announce-bar{background:var(--navy);color:var(--gold-light);font-size:.82rem;font-weight:600;letter-spacing:.06em;text-align:center;padding:.55rem 1rem;text-transform:uppercase;}
+    .announce-bar a{color:inherit;}
+    .top-nav{background:var(--white);border-bottom:1px solid #e0ddd8;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:80px;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,.07);}
+    .top-nav .logo img{height:58px;width:auto;display:block;}
+    .top-nav .main-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+    .top-nav .main-links>li>a{display:block;padding:.6rem 1rem;color:var(--navy);text-decoration:none;font-size:.92rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;transition:color .2s;}
+    .top-nav .main-links>li>a:hover,.top-nav .main-links>li>a.active{color:var(--gold);}
+    .top-nav .nav-actions{display:flex;align-items:center;gap:1rem;}
+    .btn-primary{background:var(--red);color:var(--white);padding:.6rem 1.35rem;border-radius:3px;text-decoration:none;font-size:.88rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:background .2s;border:none;cursor:pointer;display:inline-block;}
+    .btn-primary:hover{background:var(--red-hover);}
+    .phone-nav{color:var(--navy);font-size:.95rem;font-weight:700;text-decoration:none;}
+    .phone-nav:hover{color:var(--gold);}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:.4rem;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;}
+    .page-hero{background:var(--navy);padding:4rem 5%;position:relative;overflow:hidden;}
+    .page-hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:60px;background:var(--white);clip-path:ellipse(55% 100% at 50% 100%);}
+    .page-hero-inner{max-width:680px;position:relative;z-index:1;}
+    .section-label{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.6rem;}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.8rem);color:var(--white);line-height:1.15;margin-bottom:1rem;}
+    .page-hero p{color:rgba(255,255,255,.78);font-size:1.05rem;line-height:1.65;}
+    .services-section{padding:4rem 5%;}
+    .section-title{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin-bottom:.5rem;}
+    .section-sub{color:var(--text-light);font-size:1rem;line-height:1.65;margin-bottom:2.5rem;max-width:640px;}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.75rem;}
+    .service-card{background:var(--offwhite);border:1px solid #e0ddd8;border-radius:4px;padding:2rem;transition:box-shadow .25s,transform .25s;}
+    .service-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1);transform:translateY(-3px);}
+    .service-icon{font-size:2.5rem;margin-bottom:1rem;}
+    .service-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:.6rem;}
+    .service-card p{color:var(--text-light);font-size:.92rem;line-height:1.6;}
+    .process-section{background:var(--navy);padding:4rem 5%;}
+    .process-section .section-label{color:var(--gold-light);}
+    .process-section .section-title{color:var(--white);}
+    .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:2.5rem;}
+    .step{text-align:center;}
+    .step-num{width:52px;height:52px;border-radius:50%;background:var(--gold);color:var(--navy);font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}
+    .step h4{color:var(--white);font-size:1rem;font-weight:700;margin-bottom:.5rem;}
+    .step p{color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.55;}
+    .emergency-section{background:var(--red);padding:3.5rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+    .emergency-section h2{font-family:'Playfair Display',serif;color:var(--white);font-size:1.8rem;line-height:1.25;}
+    .emergency-section p{color:rgba(255,255,255,.85);font-size:1rem;margin-top:.5rem;}
+    .btn-white{background:var(--white);color:var(--red);padding:.75rem 2rem;border-radius:3px;text-decoration:none;font-size:.92rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:all .2s;white-space:nowrap;}
+    .btn-white:hover{background:rgba(255,255,255,.9);}
+    footer{background:#0e1627;color:rgba(255,255,255,.65);padding:3rem 5% 1.75rem;}
+    .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1);}
+    .footer-brand img{height:52px;margin-bottom:1rem;filter:brightness(0) invert(1);opacity:.85;}
+    .footer-brand p{font-size:.88rem;line-height:1.65;max-width:280px;}
+    .footer-col h4{color:var(--white);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.1rem;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+    .footer-col ul li a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.9rem;}
+    .footer-col ul li a:hover{color:var(--gold-light);}
+    .footer-bottom{padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem;}
+    @media(max-width:900px){.top-nav{padding:0 1.25rem;}.top-nav .main-links{display:none;}.hamburger{display:block;}.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:560px){.footer-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
-  <header>
-    <div>
-      <img src="/images/logo.png" alt="Barnes Garage Doors">
-      <nav>
-        <a href="/index.html">Home</a>
-        <a href="/residential.html">Residential</a>
-        <a href="/commercial.html">Commercial</a>
-        <a href="/service.html">Service & Repairs</a>
-        <a href="/about.html">About Us</a>
-        <a href="/contact.html">Contact Us</a>
-        <a href="tel:+12052173034" style="font-weight: bold;">📞 (205) 217-3034</a>
-      </nav>
+
+<div class="announce-bar">Authorized Clopay® Dealer &nbsp;|&nbsp; Greater Birmingham, AL &nbsp;|&nbsp; <a href="tel:+12052173034">(205) 217-3034</a></div>
+
+<nav class="top-nav">
+  <a href="index.html" class="logo"><img src="images/logo.png" alt="Barnes Garage Doors LLC"></a>
+  <ul class="main-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="residential.html">Residential</a></li>
+    <li><a href="commercial.html">Commercial</a></li>
+    <li><a href="service.html" class="active">Service &amp; Repairs</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="tel:+12052173034" class="phone-nav">📞 (205) 217-3034</a>
+    <a href="contact.html" class="btn-primary">Schedule Service</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="section-label">Service &amp; Repair</p>
+    <h1>Fast, Honest Repairs — Done Right the First Time.</h1>
+    <p>From broken springs to stuck openers, Tanner and the Barnes team respond quickly and fix it properly. Same-day service available throughout Greater Birmingham.</p>
+  </div>
+</div>
+
+<section class="services-section">
+  <h2 class="section-title">What We Fix &amp; Service</h2>
+  <p class="section-sub">No job is too big or too small. Here's a look at our most common service calls — if you don't see it, just call us.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🔩</div>
+      <h3>Spring Replacement</h3>
+      <p>Broken torsion or extension springs are a safety hazard. We replace them with high-cycle springs for longer lasting performance — safely and quickly.</p>
     </div>
-  </header>
+    <div class="service-card">
+      <div class="service-icon">⚡</div>
+      <h3>Opener Repair &amp; Replacement</h3>
+      <p>Whether your opener is dead, noisy, or just won't respond, we diagnose and repair or replace it. We install LiftMaster, Chamberlain, and more.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔗</div>
+      <h3>Cable Repair</h3>
+      <p>Frayed or snapped cables can cause the door to fall dangerously. We replace cables and restore proper balance and tension to your door system.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛤️</div>
+      <h3>Track Alignment &amp; Repair</h3>
+      <p>Bent, misaligned, or damaged tracks cause binding and noise. We straighten, realign, and replace tracks to get your door rolling smoothly again.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎰</div>
+      <h3>Roller &amp; Hinge Replacement</h3>
+      <p>Worn rollers and cracked hinges create friction and noise. Replacing them with heavy-duty components makes a dramatic difference in door performance.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Remotes &amp; Keypads</h3>
+      <p>We program and replace remotes, keypads, and smart home integrations. If your existing equipment isn't syncing, we'll get it working or upgrade it.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🪟</div>
+      <h3>Panel Replacement</h3>
+      <p>Storm damage, dents, or cracks in individual panels don't always require a full replacement. We source matching panels and swap them flawlessly.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌧️</div>
+      <h3>Weatherstripping &amp; Seals</h3>
+      <p>Water intrusion, drafts, and dirt getting in are signs worn weatherstripping needs replacing. We seal your door fully on all four sides.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <h3>Tune-Up &amp; Lubrication</h3>
+      <p>A full tune-up extends door life significantly. We inspect, tighten, lubricate, and adjust your entire door system — and show you how to maintain it.</p>
+    </div>
+  </div>
+</section>
 
+<div class="process-section">
+  <p class="section-label">Our Process</p>
+  <h2 class="section-title">How It Works</h2>
+  <div class="process-steps">
+    <div class="step"><div class="step-num">1</div><h4>Call or Book Online</h4><p>Reach us by phone or through our contact form. We'll get you scheduled fast — often same or next day.</p></div>
+    <div class="step"><div class="step-num">2</div><h4>We Diagnose</h4><p>Tanner arrives on time, inspects your door system thoroughly, and gives you an honest assessment — no inflated recommendations.</p></div>
+    <div class="step"><div class="step-num">3</div><h4>We Fix It</h4><p>Most repairs are completed in a single visit with parts on-hand. We don't leave until the door is working perfectly.</p></div>
+    <div class="step"><div class="step-num">4</div><h4>We Teach You</h4><p>Before we leave, we show you how to maintain your system and what to watch for — because informed customers have fewer problems.</p></div>
+  </div>
+</div>
 
+<div class="emergency-section">
+  <div>
+    <h2>Door Won't Open? We Can Help Today.</h2>
+    <p>Same-day service available throughout Greater Birmingham, AL.</p>
+  </div>
+  <a href="tel:+12052173034" class="btn-white">📞 Call (205) 217-3034</a> </div>
 
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><img src="images/logo.png" alt="Barnes Garage Doors"><p>Barnes Garage Doors LLC — Authorized Clopay® Dealer serving Greater Birmingham, Alabama.</p></div>
+    <div class="footer-col"><h4>Products</h4><ul><li><a href="residential.html">Residential</a></li><li><a href="commercial.html">Commercial</a></li><li><a href="service.html">Service &amp; Repair</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+12052173034">(205) 217-3034</a></li><li><a href="contact.html">Schedule Appointment</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Barnes Garage Doors LLC. All Rights Reserved.</span><span>Authorized Clopay® Dealer</span></div> </footer> </body> </html>
 
-
-
-
-
-</body>
-</html>
